@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  APP_ID: 'rocket-store-wznrt',
+  GRAPHQL_URI: 'https://eu-central-1.aws.realm.mongodb.com/api/client/v2.0/app/rocket-store-wznrt/graphql',
+  API_KEY: 'NtwIVPO5jQdd67VSgmzA3yOml2LUKDyH2zCzBpXfJFMveSOLFx5PL7AJSlyBHeqs',
 };
 
 /*
