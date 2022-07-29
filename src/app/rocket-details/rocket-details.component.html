@@ -1,1 +1,15 @@
-<p>rocket-details works!</p>
+<div *ngIf="rocketLoading; else rocketBlock">
+    Loading the rocket...
+</div>
+
+<ng-template #rocketBlock>
+    <div class="rocket container-sm">
+
+        <div class="details">
+            <img class="image rounded" [src]="rocket.image" onerror="this.src='/assets/rocket.png'" />
+            <div>
+                <h2 class="name">{{ rocket.name }}</h2>
+            </div>
+        </div>
+    </div>
+</ng-template>
