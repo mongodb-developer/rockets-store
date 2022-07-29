@@ -1,27 +1,22 @@
-# RocketsStore
+# Rockets Store
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.0.
+Demo Angular web app.
 
-## Development server
+## Generate an API key
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+1. Open the `M001` project in MongoDB Atlas.
+1. Click on the `App Services` tab and select the `Rocket Store` app.
+1. Open the `Authentication` from the left sidebar and select `API Keys`.
+1. Create a new key and copy its value.
 
-## Code scaffolding
+## Running the app
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1. Clone the Github repo
+1. Open `src/environments/environment.ts` and replace the value of `API_KEY` with the key you just generated.
+1. Install the dependencies and run the development server:
 
-## Build
+```
+npm install
+ng serve -o
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
