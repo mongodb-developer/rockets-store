@@ -1,1 +1,24 @@
-<p>rockets works!</p>
+<h2 class="text-center m-5">Rockets!</h2>
+
+<div class="text-center" *ngIf="rocketsLoading">
+    Loading the rockets...
+</div>
+
+<div class="wrapper">
+    <div *ngFor="let rocket of rockets$ | async" class="card container-sm">
+        <a class="text-center image-wrapper" [routerLink]="[rocket.name]">
+            <img
+                [src]="rocket.image"
+                onerror="this.src='/assets/rocket.png'"
+                alt="{{ rocket.name }}"
+                class="img-thumbnail rounded fixed-size" />
+        </a>
+        <div class="details">
+            <h3 class="name">
+                <a [routerLink]="[rocket.name]">{{ rocket.name }}</a>
+            </h3>
+        
+            <p class="price">{{ rocket.price }}</p>
+        </div>
+    </div>
+</div>

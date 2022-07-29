@@ -1,0 +1,46 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 50px;
+}
+
+.card {
+    display: flex;
+    gap: 50px;
+    padding: 20px;
+    margin-bottom: 10px;
+    background-color: #f6f6f5;
+
+    .poster {
+        width: 150px;
+        max-height: 300px;
+    }
+
+    .details {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 10px;
+        margin: 0 20px;
+    }
+
+    .name a {
+        color: darkslategray;
+        text-decoration: none;
+    }
+
+    a.image-wrapper {
+        height: 400px;
+    }
+
+    img.fixed-size {
+        width: 350px;
+        max-height: 400px;
+        overflow: hidden;
+    }
+
+    .price {
+        font-size: 20px;
+        color: green;
+    }
+}

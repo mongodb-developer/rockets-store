@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { GraphQLModule } from './graphql.module';
 import { HttpClientModule } from '@angular/common/http';
 import { RocketsComponent } from './rockets/rockets.component';
+import { RocketDetailsComponent } from './rocket-details/rocket-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    RocketsComponent
+    RocketsComponent,
+    RocketDetailsComponent
   ],
   imports: [
     BrowserModule,
