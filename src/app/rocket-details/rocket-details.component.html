@@ -7,9 +7,29 @@
 
         <div class="details">
             <img class="image rounded" [src]="rocket.image" onerror="this.src='/assets/rocket.png'" />
-            <div>
-                <h2 class="name">{{ rocket.name }}</h2>
+            <div class="description">
+                <div class="name-price-wrapper">
+                    <h2 class="name">{{ rocket.name }}</h2>
+                    <p class="price">{{ rocket.price }}</p>
+                </div>
+
+                <span>Status: {{ rocket.status }}</span>
+                <span>Liftoff thrust: {{ rocket.liftoffThrust }}</span>
+                <span>Payload to LEO: {{ rocket.payloadToLEO }}</span>
+                <span>Stages: {{ rocket.stages }}</span>
+                <span>Number of strap-ons: {{ rocket.strapOns }}</span>
+                <span>Payload to GTO: {{ rocket.payloadToGTO }}</span>
+                <span>Fairing diameter: {{ rocket.fairingDiameter }}</span>
+                <span>Fairing height: {{ rocket.fairingHeight }}</span>
+                <a [href]="rocket.wiki">Wikipedia page</a>
+
+                <button class="btn btn-lg btn-success">Add to cart</button>
             </div>
         </div>
+    </div>
+
+    <div class="launches container-sm">
+        <h3>Launches</h3>
+        // TODO: get launches from the 'Launches' database
     </div>
 </ng-template>

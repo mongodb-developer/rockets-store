@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Apollo, gql } from 'apollo-angular';
 import { Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
-import { Rocket } from '../rocket';
+import { RocketShortInfo } from '../rocket';
 
 const GET_ALL_ROCKETS = gql`
   query {
@@ -21,7 +21,7 @@ const GET_ALL_ROCKETS = gql`
   styleUrls: ['./rockets.component.scss']
 })
 export class RocketsComponent implements OnInit {
-  rockets$: Observable<Rocket[]>;
+  rockets$: Observable<RocketShortInfo[]>;
   rocketsLoading = true;
 
   constructor(private apollo: Apollo) { }

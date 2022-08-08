@@ -1,14 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Apollo, gql } from 'apollo-angular';
-import { Observable } from 'rxjs';
 import { Rocket } from '../rocket';
 
 const GET_ROCKET= gql`
   query ($name: String) {
     rocket(query:{ name: $name }) {
       name
+      price
       image
+      cmp
+      wiki
+      status
+      liftoffThrust
+      payloadToLEO
+      stages
+      strapOns
+      payloadToGTO
+      fairingDiameter
+      fairingHeight
     }
   }
 `;
@@ -20,7 +30,6 @@ const GET_ROCKET= gql`
 })
 export class RocketDetailsComponent implements OnInit {
   private name: string;
-  rocket$: Observable<{ rocket: Rocket }>;
   rocket: Rocket;
   rocketLoading = true;
 

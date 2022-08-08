@@ -1,17 +1,45 @@
-.rocket {
+.rocket, .launches {
     margin: 20px 0;
     padding: 30px 50px;
     border: 1px solid rgba(0,0,0,.2);
     border-radius: 0.25rem;
+}
 
+.rocket {
     .title {
         margin-bottom: 30px;
+    }
+
+    .price {
+        font-size: 20px;
+        color: green;
+        font-weight: bold;
+    }
+
+    .name-price-wrapper {
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+        vertical-align: middle;
+        margin-bottom: 10px;
+        padding: 10px 0;
+    }
+
+    .name-price-wrapper > * {
+        align-self: center;
+        margin: 0;
     }
 
     .details {
         display: flex;
         flex-direction: row;
         gap: 30px;
+    }
+
+    .description {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
     }
 
     .ratings {
