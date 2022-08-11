@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Apollo, gql } from 'apollo-angular';
+import { CartService } from '../cart.service';
 import { Rocket } from '../rocket';
 
 const GET_ROCKET= gql`
   query ($name: String) {
     rocket(query:{ name: $name }) {
+      _id
       name
       price
       image
@@ -35,7 +37,8 @@ export class RocketDetailsComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private apollo: Apollo
+    private apollo: Apollo,
+    private cartService: CartService
   ) { }
 
   ngOnInit(): void {
@@ -60,5 +63,9 @@ export class RocketDetailsComponent implements OnInit {
           }
         });
     });
+  }
+
+  addToCart() {
+    this.cartService.addToCart(this.rocket).subscribe();
   }
 }

@@ -6,6 +6,7 @@ export class RocketShortInfo {
 }
 
 export class Rocket extends RocketShortInfo {
+    _id: string;
     cmp: string;
     wiki: string;
     status: string;

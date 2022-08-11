@@ -23,7 +23,7 @@
                 <span>Fairing height: {{ rocket.fairingHeight }}</span>
                 <a [href]="rocket.wiki">Wikipedia page</a>
 
-                <button class="btn btn-lg btn-success">Add to cart</button>
+                <button (click)="addToCart()" class="btn btn-lg btn-success">Add to cart</button>
             </div>
         </div>
     </div>

@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { AuthService } from '../auth.service';
+import { Cart } from '../cart';
+import { CartService } from '../cart.service';
 import { Customer } from '../customer';
 
 @Component({
@@ -9,12 +12,18 @@ import { Customer } from '../customer';
 })
 export class NavbarComponent implements OnInit {
   customer: Customer | null;
+  cart$: Observable<Cart>;
 
-  constructor(private auth: AuthService) { }
+  constructor(private auth: AuthService, private cartService: CartService) { }
 
   ngOnInit(): void {
     this.auth.getCustomer().subscribe(customer => {
       this.customer = customer;
+      this.cart$ = this.cartService.getCartObservable(customer);
     });
+  }
+
+  clearCart() {
+    this.cartService.clearCart().subscribe();
   }
 }

@@ -2,9 +2,10 @@ import { Injectable } from '@angular/core';
 import { Apollo, gql } from 'apollo-angular';
 import { map } from 'rxjs';
 
-const GET_CUSTOMER= gql`
+const GET_CUSTOMER = gql`
   query {
     customer {
+      _id
       name
       avatar
     }
